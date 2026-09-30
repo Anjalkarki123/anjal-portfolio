@@ -37,25 +37,13 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-7">
-            <h1>I build software, then I check that it actually works.</h1>
-            <p class="lead mt-4">I'm Anjal Karki, a Computer Science student at the University of Idaho and a software engineer intern at RCDS / IIDS. I care most about the moment where output looks right but isn't.</p>
-            <div class="d-flex flex-wrap gap-2 mt-4">
-              <a href="portfolio.html" class="btn btn-pine btn-lg">See my projects</a>
-              <a href="contact.html" class="btn btn-outline-pine btn-lg">Get in touch</a>
-            </div>
-          </div>
-          <div class="col-lg-5">
-            <aside class="test-log" aria-label="Checks from my recent work">
-              <h2>Recent checks from my work</h2>
-              <ol>
-                <li><span class="ok" aria-label="Passed">&#10003;</span><div>Every AI-generated invoice verified against source data<small>Invoicing app, RCDS / IIDS</small></div></li>
-                <li><span class="bad" aria-label="Failed">&#10007;</span><div>84.9% accuracy, but the rarest class was never detected<small>Diabetes classification, 253,680 records</small></div></li>
-                <li><span class="ok" aria-label="Passed">&#10003;</span><div>Switched pass criteria to per-class recall and macro-F1<small>Bias corrected with class weighting</small></div></li>
-                <li><span class="ok" aria-label="Passed">&#10003;</span><div>Demo mode replays the same inputs after every update<small>Lost Map Studio regression test</small></div></li>
-              </ol>
-            </aside>
+        <div class="home-intro">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1>Anjal Karki</h1>
+          <p class="lead mt-3">A Computer Science student at the University of Idaho who enjoys building useful software and learning how things work.</p>
+          <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
+            <a href="portfolio.html" class="btn btn-pine btn-lg">View my projects</a>
+            <a href="contact.html" class="btn btn-outline-pine btn-lg">Get in touch</a>
           </div>
         </div>
       </div>
@@ -63,32 +51,9 @@
 
     <section class="block">
       <div class="container">
-        <div class="row g-4">
-          <div class="col-md-4">
-            <article class="panel">
-              <h3>Full-stack web apps</h3>
-              <p>At my internship I built an internal invoicing application with <strong>React</strong> and <strong>FastAPI</strong>, added single sign-on with OAuth 2.0, and debugged it end to end, including a third-party integration that failed only some of the time.</p>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="panel">
-              <h3>Machine learning, measured honestly</h3>
-              <p>A high score is not the same as a working model. In my diabetes classification project I found that the best-scoring models were simply guessing the common answer, and I changed how the models were judged.</p>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="panel">
-              <h3>Testing and debugging</h3>
-              <p>I write tests that can be repeated: fixed seeds, replayable input sequences, and features checked against the requirements people actually gave me. It's the habit I bring to every project.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="prose mt-5">
-          <h2 class="h3">A little more about how I work</h2>
-          <p>Outside of code, I operate live replay and graphics equipment for <em>ESPN+</em> broadcasts with Idaho Athletics. When something fails there, it fails on air in real time, which has taught me to stay calm, diagnose quickly, and fix the right thing first.</p>
-          <p>I also tutor Calculus and have worked with more than 100 students. Explaining a hard idea plainly is a skill I use every day as an engineer, whether I'm writing documentation or gathering requirements from the people who will use what I build.</p>
-          <p>I'm graduating in May 2027 and looking for software engineering and quality-focused internships and roles. Take a look at my <a href="portfolio.html">projects</a> or <a href="about.html">read more about me</a>.</p>
+        <div class="home-links">
+          <a href="about.html">Learn more about me <span aria-hidden="true">&#8594;</span></a>
+          <a href="portfolio.html">Explore my work <span aria-hidden="true">&#8594;</span></a>
         </div>
       </div>
     </section>
