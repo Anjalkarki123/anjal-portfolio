@@ -1,0 +1,153 @@
+/* ===== Anjal Karki portfolio: shared styles ===== */
+:root {
+  --ink: #1b2430;
+  --pine: #1e4d45;
+  --pine-dark: #153a34;
+  --gold: #d4a017;
+  --slate: #5b6675;
+  --paper: #f6f7f9;
+  --line: #dde1e6;
+  --pass: #2f7d4f;
+  --fail: #b23a3a;
+}
+
+body {
+  font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main { flex: 1; }
+
+h1, h2, h3, h4, .navbar-brand {
+  font-family: "Bricolage Grotesque", "IBM Plex Sans", Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+.prose { max-width: 70ch; }
+a { color: var(--pine); }
+a:hover { color: var(--pine-dark); }
+
+/* ----- Navigation ----- */
+.site-nav { background: var(--pine); }
+.site-nav .navbar-brand { color: #fff; font-weight: 700; font-size: 1.35rem; }
+.site-nav .navbar-brand span { color: var(--gold); }
+.site-nav .nav-link {
+  color: rgba(255,255,255,.85);
+  padding: .5rem .9rem !important;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.site-nav .nav-link:hover { color: #fff; background: rgba(255,255,255,.08); }
+/* Highlight the page the visitor is on */
+.site-nav .nav-link.active {
+  color: var(--ink) !important;
+  background: var(--gold);
+  font-weight: 600;
+}
+.navbar-toggler { border-color: rgba(255,255,255,.4); }
+.navbar-toggler-icon { filter: invert(1); }
+
+/* ----- Buttons ----- */
+.btn-pine { background: var(--pine); color: #fff; border: 0; }
+.btn-pine:hover, .btn-pine:focus { background: var(--pine-dark); color: #fff; }
+.btn-outline-pine { border: 2px solid var(--pine); color: var(--pine); }
+.btn-outline-pine:hover { background: var(--pine); color: #fff; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ----- Home hero ----- */
+.hero { padding: 5rem 0 4rem; background: #fff; border-bottom: 1px solid var(--line); }
+.hero h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.05; }
+.hero .lead { color: var(--slate); max-width: 52ch; }
+
+/* The test log: the one memorable element */
+.test-log {
+  background: var(--ink);
+  color: #e6e9ee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-size: .95rem;
+  box-shadow: 0 20px 40px -20px rgba(27,36,48,.45);
+}
+.test-log h2 { font-size: 1rem; color: #9aa4b2; font-weight: 500; margin-bottom: 1rem; }
+.test-log ol { list-style: none; padding: 0; margin: 0; }
+.test-log li {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: .4rem;
+  padding: .6rem 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.test-log .ok { color: #6fd39a; font-weight: 700; }
+.test-log .bad { color: #f08c8c; font-weight: 700; }
+.test-log small { color: #9aa4b2; display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .test-log li { opacity: 0; animation: logIn .4s ease forwards; }
+  .test-log li:nth-child(1) { animation-delay: .2s; }
+  .test-log li:nth-child(2) { animation-delay: .6s; }
+  .test-log li:nth-child(3) { animation-delay: 1s; }
+  .test-log li:nth-child(4) { animation-delay: 1.4s; }
+}
+@keyframes logIn { from { opacity: 0; transform: translateY(4px);} to { opacity: 1; transform: none; } }
+
+/* ----- General page parts ----- */
+.page-head { background: #fff; border-bottom: 1px solid var(--line); padding: 3rem 0 2rem; }
+.page-head h1 { font-weight: 800; font-size: clamp(2rem, 4vw, 2.8rem); }
+.page-head p { color: var(--slate); max-width: 60ch; margin: 0; }
+.block { padding: 3rem 0; }
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.75rem;
+  height: 100%;
+}
+.panel h3 { font-size: 1.2rem; font-weight: 700; }
+.fact { border-left: 4px solid var(--gold); padding-left: 1rem; }
+.fact strong { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: 1.8rem; display: block; line-height: 1.1; }
+.fact span { color: var(--slate); }
+
+/* Experience timeline (real sequence, so a line with dots) */
+.timeline { list-style: none; padding-left: 0; border-left: 2px solid var(--line); }
+.timeline li { position: relative; padding: 0 0 1.75rem 1.5rem; }
+.timeline li::before {
+  content: ""; position: absolute; left: -7px; top: .45rem;
+  width: 12px; height: 12px; border-radius: 50%; background: var(--pine);
+}
+.timeline .when { color: var(--slate); font-size: .9rem; }
+
+.skill-tag {
+  display: inline-block; background: #e8efed; color: var(--pine-dark);
+  border-radius: 999px; padding: .2rem .75rem; margin: 0 .3rem .4rem 0; font-size: .9rem;
+}
+
+/* Project entries */
+.project { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+.project h2 { font-size: 1.5rem; font-weight: 700; }
+.project .stack { color: var(--slate); font-size: .95rem; }
+.project .finding {
+  background: #fdf6e3; border-left: 4px solid var(--gold);
+  padding: .9rem 1.1rem; border-radius: 0 8px 8px 0; margin: 1rem 0;
+}
+
+/* Forms */
+.form-panel { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 2rem; }
+.form-control:focus, .form-select:focus, .form-check-input:focus {
+  border-color: var(--pine); box-shadow: 0 0 0 .2rem rgba(30,77,69,.2);
+}
+.form-check-input:checked { background-color: var(--pine); border-color: var(--pine); }
+
+/* Map */
+.map-wrap { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+.map-wrap iframe { display: block; width: 100%; height: 380px; border: 0; }
+
+/* Policy pages */
+.policy h2 { font-size: 1.35rem; font-weight: 700; margin-top: 2rem; }
+
+/* ----- Footer ----- */
+.site-footer { background: var(--ink); color: #c9d0d9; padding: 2rem 0; margin-top: 3rem; }
+.site-footer a { color: #c9d0d9; text-decoration: none; margin-right: 1.25rem; }
+.site-footer a:hover { color: #fff; text-decoration: underline; }
+.site-footer a.active { color: var(--gold); font-weight: 600; }
